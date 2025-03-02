@@ -7,7 +7,7 @@ class SolanaTokenMonitor {
   constructor(options = {}) {
     this.knownTokensFile = options.knownTokensFile || 'known_tokens.json';
     this.alertLogFile = options.alertLogFile || 'token_alerts.json';
-    this.targetTokenName = options.targetTokenName || 'Replicat-One';
+    this.targetTokenName = options.targetTokenName || 'Replicat';
     this.intervalMs = options.intervalMs || 10_000; 
     this.knownTokens = new Set(this.loadKnownTokens());
   }
@@ -179,7 +179,7 @@ class SolanaTokenMonitor {
 
 (async () => {
   const monitor = new SolanaTokenMonitor({
-    targetTokenName: 'Replicat-One',
+    targetTokenName: 'Replicat',
     knownTokensFile: 'known_tokens.json',
     alertLogFile: 'token_alerts.json',
     intervalMs: 10_000
