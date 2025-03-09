@@ -7,11 +7,10 @@ async function getTokenHoldersAndSaveToFile(tokenMintAddress) {
 
     // 获取与 tokenMintAddress 相关的所有代币账户
     const result = await connection.getProgramAccounts(
-        new PublicKey('TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA'), // Token Program ID
-        {
+        new PublicKey('TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA'), 
             filters: [
                 { dataSize: 165 },  // 代币账户大小
-                { memcmp: { offset: 0, bytes: mintPublicKey.toBase58() } }  // 过滤代币的 mint 地址
+                { memcmp: { offset: 0, bytes: mintPublicKey.toBase58() } }  
             ]
         }
     );
@@ -51,5 +50,5 @@ async function getTokenHoldersAndSaveToFile(tokenMintAddress) {
 }
 
 // 使用代币的 mint 地址调用该函数
-const tokenMintAddress = 'JCeoBX79HfatfaY6xvuNyCHf86hwgkCCWDpEycVHtime';  // 替换为实际的 mint 地址
+const tokenMintAddress = 'JCeoBX79HfatfaY6xvuNyCHf86hwgkCCWDpEycVHtime'; 
 getTokenHoldersAndSaveToFile(tokenMintAddress).catch(console.error);

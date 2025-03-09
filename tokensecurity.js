@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const tokenReportUrl = 'https://api.rugcheck.xyz/v1/tokens/Bd5oLZJHiUkwmBtSYuEJmeR4LiQif8Tdcwg61myzXF1R/report';
+const tokenReportUrl = 'https://api.rugcheck.xyz/v1/tokens/6KeiYYNGhLUNnnmN7Hg5YebSJVy1UEKaytpx2PAwpump/report';
 
 axios.get(tokenReportUrl, {
   headers: {
